@@ -28,6 +28,8 @@ public class PlayerControllerX : MonoBehaviour
 
 
         //Rotates the plane based on the horizontal input.
+        transform.Rotate(Vector3.left * Time.deltaTime * turnSpeed * verticalInput);
+        //Rotates the plane based on the vertical input.
         transform.Rotate(Vector3.up * Time.deltaTime * turnSpeed * horizontalInput);
 
     }
