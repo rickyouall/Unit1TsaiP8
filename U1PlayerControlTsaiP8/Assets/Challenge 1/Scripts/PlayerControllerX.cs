@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerControllerX : MonoBehaviour
@@ -9,10 +10,11 @@ public class PlayerControllerX : MonoBehaviour
     public float verticalInput;
     public float horizontalInput;
     public float turnSpeed =55.0f;
+    private float planeStop = -7.0f;
     // Start is called before the first frame update
     void Start()
     {
-
+       
     }
 
     // Update is called once per frame
@@ -31,6 +33,13 @@ public class PlayerControllerX : MonoBehaviour
         transform.Rotate(Vector3.left * Time.deltaTime * turnSpeed * verticalInput);
         //Rotates the plane based on the vertical input.
         transform.Rotate(Vector3.up * Time.deltaTime * turnSpeed * horizontalInput);
+
+
+        //stop thje plane from keep going too far.
+        if (Input.GetKey(KeyCode.Space))
+        {
+            transform.Translate(Vector3.forward * Time.deltaTime * planeStop);
+        }
 
     }
 }

@@ -14,5 +14,13 @@ public class PlanePOropeller : MonoBehaviour
     void Update()
     {
         transform.Rotate(0.0f, 0.0f, 20.0f);
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+
+            transform.Rotate(0.0f, 0.0f, -18.0f);
+        }
+
     }
+ 
 }
